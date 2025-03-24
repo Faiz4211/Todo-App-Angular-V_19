@@ -1,0 +1,53 @@
+<div
+  class="fixed top-0 right-0 h-screen max-w-[400px] w-full bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out"
+  [ngClass]="{ 'translate-x-full': !isOpen, 'translate-x-0': isOpen }"
+>
+  <div class="p-5">
+    <h2 class="text-xl font-roboto-bold text-gray-600 mb-4">Add New Todo</h2>
+    <div>
+      <div class="mb-4">
+        <label class="block text-gray-800 font-roboto-regular" for="title"
+          >Title</label
+        >
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Enter title"
+          class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 font-roboto-regular"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-800 font-roboto-regular" for="description"
+          >Description</label
+        >
+        <textarea
+          id="description"
+          name="description"
+          placeholder="Enter description"
+          rows="3"
+          class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 font-roboto-regular"
+          required
+        ></textarea>
+      </div>
+
+      <div class="flex justify-between items-center mt-4">
+        <button
+          type="button"
+          (click)="closeDrawer()"
+          class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition cursor-pointer"
+        >
+          Close
+        </button>
+        <button
+          type="submit"
+          class="px-4 py-2 bg-gradient-to-r from-purple-500 to-teal-400 text-white rounded-lg hover:from-purple-600 hover:to-teal-500 transition-all cursor-pointer font-roboto-semi-bold"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

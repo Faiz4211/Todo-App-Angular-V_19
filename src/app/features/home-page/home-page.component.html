@@ -1,0 +1,15 @@
+<div>
+  <app-custom-header></app-custom-header>
+
+  <app-todo-cart
+    (onAddNewTodo)="handleAddNew()"
+    (onEditTodo)="handleEditTask($event)"
+    (onDeletTodoById)="handleDeleteTask($event)"
+    (onDeleteAllTodos)="handleDeleteAllTasks()"
+  ></app-todo-cart>
+
+  <app-todo-drawer
+    [isOpen]="isDrawerVisible"
+    (close)="toggleDrawer()"
+  ></app-todo-drawer>
+</div>

@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss";
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url("./app/assets/fonts/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: Roboto-Semi-Bold;
+  src: url("./app/assets/fonts/Montserrat-SemiBold.ttf");
+}
+@font-face {
+  font-family: Roboto-Regular;
+  src: url("./app/assets/fonts/Montserrat-Regular.ttf");
+}
+
+@theme {
+  --font-roboto-bold: Roboto-Bold, "sans-serif";
+  --font-roboto-regular: Roboto-Regular, "sans-serif";
+  --font-roboto-semi-bold: Roboto-Semi-Bold, "sans-serif";
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
