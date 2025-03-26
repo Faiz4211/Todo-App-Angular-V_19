@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { LoginService } from './login.service';
+import { DeletTodoByIdService } from './delet-todo-by-id.service';
 
-describe('LoginService', () => {
-  let service: LoginService;
+describe('DeletTodoByIdService', () => {
+  let service: DeletTodoByIdService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(LoginService);
+    service = TestBed.inject(DeletTodoByIdService);
   });
 
   it('should be created', () => {

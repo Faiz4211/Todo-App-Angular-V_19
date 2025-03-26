@@ -4,7 +4,7 @@
 >
   <div class="p-5">
     <h2 class="text-xl font-roboto-bold text-gray-600 mb-4">Add New Todo</h2>
-    <div>
+    <form [formGroup]="formGroup">
       <div class="mb-4">
         <label class="block text-gray-800 font-roboto-regular" for="title"
           >Title</label
@@ -12,10 +12,10 @@
         <input
           type="text"
           id="title"
-          name="title"
           placeholder="Enter title"
           class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 font-roboto-regular"
           required
+          formControlName="title"
         />
       </div>
 
@@ -25,11 +25,11 @@
         >
         <textarea
           id="description"
-          name="description"
           placeholder="Enter description"
-          rows="3"
+          rows="13"
           class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400 font-roboto-regular"
           required
+          formControlName="description"
         ></textarea>
       </div>
 
@@ -39,15 +39,17 @@
           (click)="closeDrawer()"
           class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition cursor-pointer"
         >
-          Close
+          Cancel
         </button>
+
         <button
+          (click)="onAddNewNotes()"
           type="submit"
           class="px-4 py-2 bg-gradient-to-r from-purple-500 to-teal-400 text-white rounded-lg hover:from-purple-600 hover:to-teal-500 transition-all cursor-pointer font-roboto-semi-bold"
         >
           Save
         </button>
       </div>
-    </div>
+    </form>
   </div>
 </div>

@@ -2,14 +2,16 @@
   <app-custom-header></app-custom-header>
 
   <app-todo-cart
-    (onAddNewTodo)="handleAddNew()"
-    (onEditTodo)="handleEditTask($event)"
+    [todos]="todos()"
+    (onAddNewTodo)="openDrawer()"
     (onDeletTodoById)="handleDeleteTask($event)"
     (onDeleteAllTodos)="handleDeleteAllTasks()"
   ></app-todo-cart>
 
   <app-todo-drawer
     [isOpen]="isDrawerVisible"
+    [formGroup]="addNewForm"
     (close)="toggleDrawer()"
+    (onAddNewTodo)="handleAddNew()"
   ></app-todo-drawer>
 </div>

@@ -7,12 +7,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login-page',
-  imports: [
-    ReactiveFormsModule,
-    FormsModule,
-    CommonModule,
-    ReactiveFormsModule,
-  ],
+  imports: [ReactiveFormsModule, FormsModule, CommonModule],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css',
 })
@@ -27,6 +22,7 @@ export class LoginPageComponent {
   private loginService = inject(LoginService);
 
   handleLoginClick(loginForm: NgForm) {
+    console.log('Login button clicked');
     if (loginForm.invalid) {
       return;
     }
@@ -38,6 +34,7 @@ export class LoginPageComponent {
     this.loginService.login(loginData).subscribe({
       next: (data) => {
         localStorage.setItem('token', data?.token);
+        localStorage.setItem('userId', data?.user?._id);
         this.router.navigateByUrl('home');
         alert(data?.message || 'Login Success!');
       },

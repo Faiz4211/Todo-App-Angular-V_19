@@ -33,6 +33,7 @@ export class SignUpPageComponent {
     this.signUpService.login(this.userObject).subscribe({
       next: (data) => {
         localStorage.setItem('token', data?.token);
+        localStorage.setItem('userId', data?.user?._id);
         this.router.navigateByUrl('home');
         alert(data?.message || 'Login Success!');
       },

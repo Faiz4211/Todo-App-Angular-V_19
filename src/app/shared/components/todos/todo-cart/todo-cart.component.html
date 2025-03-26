@@ -18,6 +18,10 @@
     </div>
   </div>
 
+  <p class="text-center" *ngIf="todos.length === 0">
+    You haven't add any Notes. Add them to see here
+  </p>
+
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
     <div
       *ngFor="let item of todos"
@@ -27,22 +31,14 @@
         <h3 class="text-xl font-roboto-semi-bold text-gray-600">
           {{ item.title }}
         </h3>
-        <div class="flex space-x-2">
-          <button
-            (click)="onEdit(item)"
-            class="p-2 text-blue-500 hover:text-blue-600 transition-all cursor-pointer"
-            title="Edit"
-          >
-            ✏️
-          </button>
-          <button
-            (click)="onDeleteById(item?._id!)"
-            class="p-2 text-red-500 hover:text-red-600 transition-all cursor-pointer"
-            title="Delete"
-          >
-            🗑️
-          </button>
-        </div>
+
+        <button
+          (click)="onDeleteById(item?._id!)"
+          class="p-2 text-red-500 hover:text-red-600 transition-all cursor-pointer"
+          title="Delete"
+        >
+          🗑️
+        </button>
       </div>
       <p class="text-gray-500 mt-2">
         {{ item.description }}
